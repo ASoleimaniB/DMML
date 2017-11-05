@@ -1,3 +1,9 @@
+% This is the MATLAB code for "Deep Multitask Metric Learning for Offline Signature Verification", a paper published in Pattern Recognition Letters
+% 
+% To become familiar with the structure of the code, you should look at the paper:
+% A Soleimani, Amir, Babak N. Araabi, and Kazim Fouladi. "Deep multitask metric learning for offline signature verification." Pattern Recognition Letters, 2016
+
+% 
 clc; close all; clear;
 p=1;
 for it_=1:1
@@ -6,11 +12,14 @@ for it_=1:1
     clear 
     load it
 p=1;
+% Number of classes. 115 in UTSig
 TOTAL=115;
 % load data\HOG_300_5_16_originalsacle_.mat
-load Hog_best
+% HOG for UTSIG dataset
+load Hog_best 
 j=0; X_=[];
 
+% Some preprocessing
 X=X./max(X(:));
 X=log(10*X+1);
 X=PLC_115_t(X,.1); %Typo PCA
@@ -19,14 +28,25 @@ save('Xtemp','X')
 
 N=size(X,2);
 
+% ng: number of genuine signatures per class for training
+% nf: number of forged signatures per class for training
 ng=12; nf=5; 
 ng_=12; nf_=5;
 
+% P1 Number of Neurons in the hidden layer (shared layer)
+% P2 Number of Neurons in the last layer (separed layers) for each class
 P1=250; P2=250;
+% parameters
 tu=3; l=10^-2; beta=1;
 mu=2*10^-3;
+% the only parameter to stop training
 iteration=20;
 
+% making genuine and forged pairs
+% xi xj train pairs
+% y is the lable
+% xi_t and xj_t pairs for test
+% y_t is the lable
 [ xi,xj,y,xi_t,xj_t,y_t ] = SkillForgOthers_RandForg(X,p,ng,nf,ng_,nf_);
 
 
@@ -101,10 +121,13 @@ display([num2str(it) '->' num2str(i)])
     end
 subplot(2,1,1)
 plot(2:it+1,(J(2:it+1)),'k','LineWidth',2);
-title([num2str(J(it+1)) ' | ' num2str(J(it+1)/J(it))]);
+% cost function in the tilte (2 current errors)
+title(['Training Cost Function: ', num2str(J(it+1)) ' | ' num2str(J(it+1)/J(it))]);
 subplot(2,1,2)
 [E(it+1) eer(it+1)]= f_AVR_115(ng,nf,ng_,nf_,W1,W2,b1,b2,TOTAL);
 plot(2:it+1,(E(2:it+1)),'c',2:it+1,(eer(2:it+1)),'m');
+legend('Average Error Ratio (AER)','Equal Error Ratio (EER)')
+title('AER and EER on Test Set')
 drawnow
 % look at eer (here is magenta in the plot
 end

@@ -11,6 +11,5 @@
 <p>To download the dataset go to:&nbsp;https://sites.google.com/site/amirsoleimanibajestani/publication</p>
 <p><strong>Code</strong></p>
 <p>This code mainly runs DMML on Feature Extracted Version of UTSig, Histogram of Gradient (HOG) which is uploaded in github as well.</p>
-<p>Main.m is the main file to rune</p>
-<p>Read comments for further information.</p>
-<p>Feel free to email me for the questions: a.soleimani.b@gmail.com</p>
+<p>Main.m is the main file to run. It trains and tests on UTSig.</p>
+<p>Read comments for further information.<br />Feel free to email me for the questions: a.soleimani.b@gmail.com</p>

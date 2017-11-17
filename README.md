@@ -13,3 +13,6 @@
 <p>This code mainly runs DMML on Feature Extracted Version of UTSig, Histogram of Gradient (HOG) which is uploaded in github as well.</p>
 <p>Main.m is the main file to run. It trains and tests on UTSig.</p>
 <p>Read comments for further information.<br />Feel free to email me for the questions: a.soleimani.b@gmail.com</p>
+
+
+Note: The code has been runed and checked in Windows. 

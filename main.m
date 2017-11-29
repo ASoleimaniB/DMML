@@ -16,7 +16,7 @@ p=1;
 TOTAL=115;
 % load data\HOG_300_5_16_originalsacle_.mat
 % HOG for UTSIG dataset
-load Hog_best 
+load HOG_300_5_16_originalsacle_ 
 j=0; X_=[];
 
 % Some preprocessing

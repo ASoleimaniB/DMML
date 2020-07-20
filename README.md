@@ -8,7 +8,7 @@
 <p><strong><img src="http://mlcm.ut.ac.ir/Images/SignatureLogo.png" alt="" width="746" height="172" /></strong></p>
 <p>UTSig has 115 classes containing: 27 genuine signatures; 3 opposite-hand signed samples and 42 simple forgeries. Each class belongs to one specific authentic person. UTSig totally has 8280 images collected from undergraduate and graduate students of University of Tehran and Sharif University of Technology. Signatures were scanned with 600 dpi resolution and stored as 8-bit Tiff files.</p>
 <p><a href="http://ieeexplore.ieee.org/document/7791523/">Dataset Paper</a></p>
-<p>To download the dataset go to:&nbsp;https://sites.google.com/site/amirsoleimanibajestani/publication</p>
+<p>To download the dataset go to:&nbsp;https://sites.google.com/view/asoleimanib/publications?authuser=0#h.p_cBpX7lgZ9eKv</p>
 <p><strong>Code</strong></p>
 <p>This code mainly runs DMML on Feature Extracted Version of UTSig, Histogram of Gradient (HOG) which is uploaded in github as well.</p>
 <p>Main.m is the main file to run. It trains and tests on UTSig.</p>
